@@ -1,0 +1,55 @@
+<div class="container paddign_and_border" align=center>
+    <div class="row">
+      <div class="col-md-4">
+  
+        <a class="btn btn-primary" [routerLink]="[]">Previous </a>
+  
+      </div>
+      <div class="col-md-4">
+  
+        <a class="btn btn-warning" (click)="goBackToPreviousPage()">Go Back </a>
+  
+      </div>
+      <div class="col-md-4">
+  
+        <a class="btn btn-primary" [routerLink]="[]">Next </a>
+  
+      </div>
+    </div>
+    <br/><br/>
+    <div class="row " *ngIf="currentHouse">
+      <div class="col-12">
+        <div class="img" style="width: 18rem;">
+          <img src="./assets/game_of_thrones_home.jpg" alt="Card image cap">
+          <div>
+            <h4>House </h4>
+            <p>Character Name : {{currentHouse.name}}</p>
+            
+            <p class="">Region : {{currentHouse.region}}</p>
+            <p class="">Coat Of Arms : {{currentHouse.coatOfArms}}</p>
+            <p> Words : {{currentHouse.words}}</p>
+            <p>Current Lord :{{currentHouse.currentLord}}</p>
+            <p>Heir : {{currentHouse.Heir}} </p>
+            <p>Over Lord : {{currentHouse.overlord}} </p>
+            <p>Founded : {{currentHouse.founded}} </p>
+            <p>Founder : {{currentHouse.founder}} </p>
+            <p>Died Out : {{currentHouse.diedOut}} </p>
+            <p>Titles : </p>
+            <div class="" *ngFor="let titles of currentHouse.titles">{{ titles }}</div>
+            <br />
+            <p>Ancestral Weapons : </p>
+            <div *ngFor="let ancestralWeapons of currentHouse.ancestralWeapons">{{ ancestralWeapons}}</div>
+            <br/>
+            <p>Cade At Branches : </p>
+            <div *ngFor="let cadetBranches of currentHouse.cadetBranches">{{ cadetBranches }}</div>
+            <br/>
+            <p>Sworn Members : </p>
+            <div *ngFor="let swornMembers of currentHouse.swornMembers">{{ swornMembers}}</div>
+            <br/>
+            
+        </div>
+        <br />
+      </div>
+  
+    </div>
+  </div>

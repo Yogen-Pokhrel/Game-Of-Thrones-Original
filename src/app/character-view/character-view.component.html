@@ -1,0 +1,55 @@
+<div class="container paddign_and_border" align=center>
+    <div class="row">
+      <div class="col-md-4">
+  
+        <a class="btn btn-primary" [routerLink]="[]">Previous </a>
+  
+      </div>
+      <div class="col-md-4">
+  
+        <a class="btn btn-warning" (click)="goBackToPreviousPage()">Go Back </a>
+  
+      </div>
+      <div class="col-md-4">
+  
+        <a class="btn btn-primary" [routerLink]="[]">Next </a>
+  
+      </div>
+    </div>
+    <br/><br/>
+    <div class="row " *ngIf="currentCharacter">
+      <div class="col-12">
+        <div class="img" style="width: 18rem;">
+          <img src="./assets/characters.jpg" alt="Card image cap">
+          <div>
+            <h4>Character </h4>
+            <p>Character Name : {{currentCharacter.name}}</p>
+            <div class="" *ngFor="let aliases of currentCharacter.aliases">Aliases Name : {{aliases}}
+  
+            </div>
+            <p class="">Gender : {{currentCharacter.gender}}</p>
+            <p class="">Culture : {{currentCharacter.culture}}</p>
+            <p> Father : {{currentCharacter.father}}</p>
+            <p>Mother :{{currentCharacter.mother}}</p>
+            <p>Spouse : {{currentCharacter.spouse}} </p>
+            <p>Books : </p>
+            <div class="" *ngFor="let books of currentCharacter.books">{{ books }}</div>
+            <br />
+            <p>Pov Books : </p>
+            <div *ngFor="let povBook of currentCharacter.povBooks">{{ povBook }}</div>
+            <br/>
+            <p>Titles : </p>
+            <div *ngFor="let titles of currentCharacter.titles">{{ titles }}</div>
+            <br/>
+            <p>Played  : </p>
+            <div *ngFor="let played of currentCharacter.playedBy">{{ played}}</div>
+            <br/>
+            <p>TV Series : </p>
+            <div *ngFor="let tvSeriesdata of currentCharacter.tvSeries">{{ tvSeriesdata}}</div>
+          </div>
+        </div>
+        <br />
+      </div>
+  
+    </div>
+  </div>

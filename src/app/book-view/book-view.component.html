@@ -1,0 +1,47 @@
+<div class="container paddign_and_border" align=center>
+  <div class="row">
+    <div class="col-md-4">
+
+      <a class="btn btn-primary" [routerLink]="[]">Previous </a>
+
+    </div>
+    <div class="col-md-4">
+
+      <a class="btn btn-warning" (click)="goBackToPreviousPage()">Go Back </a>
+
+    </div>
+    <div class="col-md-4">
+
+      <a class="btn btn-primary" [routerLink]="[]">Next </a>
+
+    </div>
+  </div>
+  <br/><br/>
+  <div class="row " *ngIf="currentBook">
+    <div class="col-12">
+      <div class="img" style="width: 18rem;">
+        <img src="./assets/books.jpg" alt="Card image cap">
+        <div>
+          <h4>Book </h4>
+          <p>Book Name : {{currentBook.name}}</p>
+          <div class="" *ngFor="let author of currentBook.authors">Author : {{author}}
+
+          </div>
+          <p class="">ISBN : {{currentBook.isbn}}</p>
+          <p class="">Releaded Date : {{currentBook.released | date}}</p>
+          <p> Number of Pages: {{currentBook.numberOfPages}}</p>
+          <p>Publisher :{{currentBook.publisher}}</p>
+          <p>Media Type : {{currentBook.mediaType}} </p>
+          <p>Characters : </p>
+          <div class="" *ngFor="let characterOfBooks of currentBook.characters">{{ characterOfBooks }}</div>
+          <br />
+          <p>Pov Characters : </p>
+          <div *ngFor="let povCharacter of currentBook.characters">{{ povCharacter }}</div>
+
+        </div>
+      </div>
+      <br />
+    </div>
+
+  </div>
+</div>

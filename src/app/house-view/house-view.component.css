@@ -1,0 +1,7 @@
+.paddign_and_border{
+    padding:20px;
+    border: 2px solid rgb(78, 42, 42);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 5px 2px 18px;
+}
